@@ -886,6 +886,7 @@ export class Proxy implements IProxy {
       protocols: protocols.length > 0 ? protocols : undefined,
       agent: ctx.isSSL ? self.httpsAgent : self.httpAgent,
       headers: proxyToServerHeaders,
+      ALPNProtocols: ['http/1.1'],
     };
     function makeProxyToServerWebSocket() {
       ctx.proxyToServerWebSocket = new WebSocket(
